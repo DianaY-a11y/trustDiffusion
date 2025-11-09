@@ -11,27 +11,11 @@
     <div id="container">
         <div id="canvas-container"></div>
 
-        <div id="controls">
-            <div class="control-group">
-                <label for="sequence-select">Sequence:</label>
-                <select id="sequence-select">
-                    <optgroup label="Original Sequences">
-                        <option value="01_standard">Standard Generation</option>
-                        <option value="02_low_steps">Low Steps (Arrested Development)</option>
-                        <option value="03_high_guidance">High Guidance (Over-interpretation)</option>
-                        <option value="04_paradox">Paradoxical Prompt</option>
-                    </optgroup>
-                    <optgroup label="Fake News Theme">
-                        <option value="05_truth_vs_lies">Truth vs Lies</option>
-                        <option value="06_echo_chamber">Echo Chamber</option>
-                        <option value="07_propaganda">Propaganda Machine</option>
-                        <option value="08_deepfake_paradox">Deepfake Paradox</option>
-                        <option value="09_info_overload">Information Overload</option>
-                        <option value="10_viral_spread">Viral Spread</option>
-                    </optgroup>
-                </select>
-            </div>
+        <div id="prompt-display" style="display: none;">
+            <p id="prompt-text"></p>
+        </div>
 
+        <div id="controls">
             <div class="control-group">
                 <label for="step-slider">Step: <span id="step-display">0</span></label>
                 <input type="range" id="step-slider" min="0" max="50" value="0" step="1">
@@ -49,10 +33,6 @@
 
             <div class="control-group checkbox-group">
                 <label>
-                    <input type="checkbox" id="show-metadata" checked>
-                    Show Metadata
-                </label>
-                <label>
                     <input type="checkbox" id="show-diff">
                     Show Difference Map
                 </label>
@@ -66,7 +46,7 @@
             <div class="control-group checkbox-group">
                 <label>
                     <input type="checkbox" id="show-prompt">
-                    Show Prompt
+                    Show Prompt Below
                 </label>
                 <label>
                     <input type="checkbox" id="comparison-mode">
@@ -102,6 +82,8 @@
         <div id="metadata-panel">
             <h3>Process Metadata</h3>
             <div id="metadata-content">
+                <p><strong>Theme:</strong> <span id="meta-theme">-</span></p>
+                <p><strong>Mode:</strong> <span id="meta-mode">-</span></p>
                 <p><strong>Prompt:</strong> <span id="meta-prompt">-</span></p>
                 <p><strong>Step:</strong> <span id="meta-step">-</span> / <span id="meta-total">-</span></p>
                 <p><strong>Timestep:</strong> <span id="meta-timestep">-</span></p>

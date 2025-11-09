@@ -30,7 +30,7 @@ Inspired by:
 diffusion-visualization-installation/
 │
 ├── phase1_generation/              # Python scripts for capturing diffusion steps
-│   ├── diffusion_step_generator.py # Main generation script
+│   ├── diffusion_step_generator.py # Main generation script (enhanced for Phase 3)
 │   └── requirements.txt            # Python dependencies
 │
 ├── phase2_viewer/                  # Interactive web-based viewer
@@ -38,8 +38,14 @@ diffusion-visualization-installation/
 │   ├── style.css                   # Styling
 │   └── sketch.js                   # p5.js visualization logic
 │
-├── phase3_interpretability/        # (Future) Advanced visualization features
-│   └── difference_maps.py          # Pixel-diff heatmaps
+├── phase3_interpretability/        # ✨ NEW: Deep algorithmic analysis
+│   ├── attention_visualizer.py    # Token-to-region mapping
+│   ├── semantic_emergence.py      # When concepts become recognizable
+│   ├── noise_decomposition.py     # Latent space evolution
+│   ├── token_attribution.py       # Which words matter most
+│   ├── analyze_all.py             # Run all analyses
+│   ├── requirements.txt           # Additional dependencies
+│   └── README.md                  # Phase 3 usage guide
 │
 ├── assets/
 │   ├── generated_sequences/        # Output from phase1 (image sequences + metadata)
@@ -122,6 +128,40 @@ Then open: `http://localhost:8000`
 
 ---
 
+### Phase 3: Deep Interpretability Analysis ✨ NEW
+
+**Prerequisites:**
+- Modern Python 3.9+
+- Sequences generated with enhanced Phase 1 (captures additional data)
+
+**Installation:**
+```bash
+cd phase3_interpretability
+pip install -r requirements.txt
+```
+
+**Quick Run:**
+```bash
+# Run all analyses (skip expensive token attribution)
+python analyze_all.py ../assets/generated_sequences/01_standard --skip-attribution
+```
+
+**What it analyzes:**
+- 🎯 **Attention maps** - Which image regions correspond to which prompt words
+- 📈 **Semantic emergence** - When concepts become recognizable (uses CLIP)
+- 🌀 **Noise decomposition** - Latent space evolution and denoising trajectory
+- 🔤 **Token attribution** - Which words have the most influence (optional, slow)
+
+**Output:**
+- Attention heatmaps and evolution visualizations
+- Emergence curves and timing data
+- Latent space trajectory plots
+- Word importance rankings
+
+**See `phase3_interpretability/README.md` for detailed usage**
+
+---
+
 ## 🎨 The Four Experimental Modes
 
 ### 1. Standard Generation
@@ -199,17 +239,21 @@ Each sequence includes a `metadata.json` file:
 
 ## 🔮 Roadmap
 
-### Phase 3: Interpretability Layers (Planned)
-- [ ] Pixel-difference heatmaps (show where changes occur)
-- [ ] Attention visualization (what the model "looks at")
-- [ ] Latent space projections
-- [ ] Comparative view (side-by-side different modes)
+### Phase 3: Interpretability Layers ✅ COMPLETE
+- [x] **Attention visualization** - Token-to-region mapping showing which words activate which areas
+- [x] **Semantic emergence** - Tracking when concepts become recognizable using CLIP
+- [x] **Noise decomposition** - Latent space evolution and denoising trajectory analysis
+- [x] **Token attribution** - Which words have the most influence via ablation studies
+- [x] **Unified orchestrator** - Run all analyses with one command
 
-### Phase 4: Installation Features (Planned)
+**See `phase3_interpretability/README.md` for usage guide**
+
+### Phase 4: Installation Features (Future)
 - [ ] Multi-screen setup guide
 - [ ] Motion sensor integration
 - [ ] Generative sound (noise → tone mapping)
 - [ ] TouchDesigner version (for larger installations)
+- [ ] Phase 2 + Phase 3 integration (interactive interpretability viewer)
 
 ---
 

@@ -1,0 +1,16 @@
+# Phase 3 Interpretability Requirements
+# Install with: pip install -r requirements.txt
+
+# Core dependencies (already in Phase 1)
+numpy>=1.24.0
+pillow>=10.0.0
+matplotlib>=3.7.0
+
+# For semantic emergence analysis (CLIP)
+transformers>=4.30.0
+
+# Optional: for video generation
+# opencv-python>=4.8.0
+
+# For progress bars
+tqdm>=4.65.0

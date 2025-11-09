@@ -12,9 +12,8 @@ let playbackSpeed = 1.0;
 let lastFrameTime = 0;
 
 // UI state
-let showMetadata = true;
 let showDiff = false;
-let showPrompt = true;
+let showPrompt = false;
 
 // Previous image for diff calculation
 let previousImage = null;
@@ -38,19 +37,26 @@ let currentMode = 'standard';
 let showThemeSelector = false;
 
 function preload() {
-    // Note: In production, you'll need to load actual generated images
-    // For now, this is a scaffold that shows the structure
-    loadSequenceMetadata(currentSequence);
+    // Load the default theme + mode sequence
+    loadThemeModeSequence();
 }
 
 function setup() {
-    let canvas = createCanvas(800, 800);
+    // Create responsive canvas
+    let container = select('#canvas-container');
+    let w = container.width;
+    let h = container.height;
+    let size = min(w, h) - 40; // Leave some padding
+
+    let canvas = createCanvas(size, size);
     canvas.parent('canvas-container');
 
     // Set up UI event listeners
     setupUIControls();
 
     console.log('Visualizer initialized');
+    console.log('Canvas size:', size);
+    console.log('Loading theme:', currentTheme, 'mode:', currentMode);
 }
 
 function draw() {
@@ -81,16 +87,6 @@ function draw() {
             drawDifferenceMap();
         }
 
-        // Draw on-canvas metadata overlay
-        if (showMetadata && metadata) {
-            drawMetadataOverlay();
-        }
-
-        // Draw prompt overlay
-        if (showPrompt && metadata) {
-            drawPromptOverlay();
-        }
-
         // Draw intensity graph
         if (showIntensityGraph && intensityData.length > 0) {
             drawIntensityGraph();
@@ -99,6 +95,9 @@ function draw() {
         // Draw theme selector overlay (bottom-right)
         drawThemeSelector();
     }
+
+    // Update prompt display (DOM element) - works for both modes
+    drawPromptOverlay();
 }
 
 function drawPlaceholder() {
@@ -322,20 +321,18 @@ function drawMetadataOverlay() {
 }
 
 function drawPromptOverlay() {
-    if (!metadata || !metadata.prompt) return;
+    // Update DOM element instead of drawing on canvas
+    if (!metadata || !metadata.prompt) {
+        select('#prompt-display').style('display', 'none');
+        return;
+    }
 
-    push();
-    fill(0, 200);
-    noStroke();
-    let promptWidth = min(width - 40, 600);
-    rect(20, height - 80, promptWidth, 60);
-
-    fill(0, 255, 136);
-    textAlign(LEFT, TOP);
-    textSize(12);
-    textFont('Courier New');
-    text(`"${metadata.prompt}"`, 30, height - 70, promptWidth - 20);
-    pop();
+    if (showPrompt) {
+        select('#prompt-display').style('display', 'block');
+        select('#prompt-text').html(`"${metadata.prompt}"`);
+    } else {
+        select('#prompt-display').style('display', 'none');
+    }
 }
 
 function drawComparisonView() {
@@ -444,7 +441,7 @@ function drawIntensityGraph() {
     // Graph dimensions
     let graphWidth = 300;
     let graphHeight = 150;
-    let graphX = width - graphWidth - 20;
+    let graphX = 20; // Left side
     let graphY = height - graphHeight - 20;
 
     // Background
@@ -752,14 +749,6 @@ function getOldSequenceName(themeId) {
 }
 
 function setupUIControls() {
-    // Sequence selector
-    select('#sequence-select').changed(() => {
-        currentSequence = select('#sequence-select').value();
-        loadSequenceMetadata(currentSequence);
-        currentStep = 0;
-        updateStep(0);
-    });
-
     // Step slider
     select('#step-slider').input(() => {
         currentStep = int(select('#step-slider').value());
@@ -789,10 +778,6 @@ function setupUIControls() {
     });
 
     // Checkboxes
-    select('#show-metadata').changed(() => {
-        showMetadata = select('#show-metadata').checked();
-    });
-
     select('#show-diff').changed(() => {
         showDiff = select('#show-diff').checked();
         // Show/hide intensity controls
@@ -882,6 +867,8 @@ function loadSequenceMetadata(sequenceName) {
             console.log('Metadata loaded:', metadata);
 
             // Update UI with metadata
+            select('#meta-theme').html(getThemeName(currentTheme));
+            select('#meta-mode').html(getModeName(currentMode));
             select('#meta-prompt').html(metadata.prompt);
             select('#meta-guidance').html(metadata.guidance_scale);
             select('#meta-seed').html(metadata.seed);

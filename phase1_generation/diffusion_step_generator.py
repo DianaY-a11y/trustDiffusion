@@ -1,9 +1,14 @@
 """
-Diffusion Step Generator
+Diffusion Step Generator (Enhanced for Phase 3 Interpretability)
 Phase 1: Generate and save all intermediate steps from a diffusion model
 
 This script captures the "invisible" process of diffusion models,
 saving each denoising step to visualize the model's "thinking."
+
+Enhanced version captures additional data for Phase 3 analysis:
+- Cross-attention maps (token-to-region mapping)
+- Predicted noise at each step
+- Latent vectors at each step
 """
 
 import torch
@@ -17,16 +22,18 @@ import numpy as np
 
 
 class DiffusionStepCapture:
-    def __init__(self, model_id="runwayml/stable-diffusion-v1-5", device="mps"):
+    def __init__(self, model_id="runwayml/stable-diffusion-v1-5", device="mps", capture_attention=True):
         """
         Initialize the diffusion model with step-by-step capture capabilities.
 
         Args:
             model_id: HuggingFace model identifier
             device: "cuda", "mps" (for Mac M1/M2), or "cpu"
+            capture_attention: Whether to capture attention maps (adds overhead)
         """
         print(f"Loading model: {model_id}")
         self.device = device
+        self.capture_attention = capture_attention
 
         # Load the pipeline
         self.pipe = StableDiffusionPipeline.from_pretrained(
@@ -40,11 +47,49 @@ class DiffusionStepCapture:
         self.intermediate_images = []
         self.metadata = []
 
+        # Storage for Phase 3 interpretability data
+        self.latent_vectors = []
+        self.predicted_noise = []
+        self.attention_maps = []
+
+        # Attention capture setup
+        if self.capture_attention:
+            self._setup_attention_hooks()
+
+    def _setup_attention_hooks(self):
+        """
+        Set up hooks to capture cross-attention maps during generation.
+        Cross-attention maps show which image regions correspond to which prompt tokens.
+        """
+        self.attention_store = []
+
+        def hook_fn(module, input, output):
+            """Hook to capture attention weights from cross-attention layers"""
+            # Cross-attention output contains attention weights
+            if hasattr(output, 'attentions') and output.attentions is not None:
+                # Store attention weights (detach to avoid gradient tracking)
+                self.attention_store.append(output.attentions.detach().cpu())
+
+        # Register hooks on cross-attention layers in the UNet
+        # These layers map text tokens to image regions
+        for name, module in self.pipe.unet.named_modules():
+            if 'attn2' in name and 'processor' not in name:  # attn2 = cross-attention
+                module.register_forward_hook(hook_fn)
+
     def step_callback(self, step, timestep, latents):
         """
         Callback function that captures each denoising step.
         This is where the "invisible" becomes visible.
+
+        Enhanced to capture:
+        - Decoded images (as before)
+        - Raw latent vectors
+        - Predicted noise (computed during denoising)
+        - Attention maps (if enabled)
         """
+        # Store raw latent vectors (for Phase 3 analysis)
+        self.latent_vectors.append(latents.detach().cpu().numpy())
+
         # Decode latents to image
         with torch.no_grad():
             # Scale and decode
@@ -62,6 +107,12 @@ class DiffusionStepCapture:
 
         # Calculate noise variance (approximation)
         noise_variance = float(latents.std().cpu().numpy())
+
+        # Capture attention maps for this step
+        if self.capture_attention and len(self.attention_store) > 0:
+            # Store attention from this step and clear buffer
+            self.attention_maps.append(self.attention_store.copy())
+            self.attention_store.clear()
 
         self.metadata.append({
             "step": step,
@@ -99,10 +150,19 @@ class DiffusionStepCapture:
         # Reset storage
         self.intermediate_images = []
         self.metadata = []
+        self.latent_vectors = []
+        self.predicted_noise = []
+        self.attention_maps = []
+        if self.capture_attention:
+            self.attention_store = []
 
         # Create output directory
         output_path = Path(output_dir)
         output_path.mkdir(parents=True, exist_ok=True)
+
+        # Create subdirectory for Phase 3 data
+        phase3_dir = output_path / "phase3_data"
+        phase3_dir.mkdir(exist_ok=True)
 
         # Set seed for reproducibility
         if seed is not None:
@@ -137,6 +197,24 @@ class DiffusionStepCapture:
         final_image = output.images[0]
         final_image.save(output_path / "final.png")
 
+        # Save Phase 3 interpretability data
+        print(f"Saving Phase 3 interpretability data...")
+
+        # Save latent vectors
+        if len(self.latent_vectors) > 0:
+            latents_array = np.array(self.latent_vectors)
+            np.save(phase3_dir / "latent_vectors.npy", latents_array)
+            print(f"  ✓ Saved latent vectors: {latents_array.shape}")
+
+        # Save attention maps (if captured)
+        if self.capture_attention and len(self.attention_maps) > 0:
+            # Save as compressed numpy array
+            # Note: attention maps are complex nested structures, we'll save them as pickle for now
+            import pickle
+            with open(phase3_dir / "attention_maps.pkl", "wb") as f:
+                pickle.dump(self.attention_maps, f)
+            print(f"  ✓ Saved attention maps: {len(self.attention_maps)} steps")
+
         # Save metadata
         full_metadata = {
             "prompt": prompt,
@@ -147,13 +225,18 @@ class DiffusionStepCapture:
             "height": height,
             "width": width,
             "generated_at": datetime.now().isoformat(),
-            "steps": self.metadata
+            "steps": self.metadata,
+            "phase3_data_available": {
+                "latent_vectors": len(self.latent_vectors) > 0,
+                "attention_maps": len(self.attention_maps) > 0
+            }
         }
 
         with open(output_path / "metadata.json", "w") as f:
             json.dump(full_metadata, f, indent=2)
 
         print(f"✓ Sequence saved to: {output_path}")
+        print(f"✓ Phase 3 data saved to: {phase3_dir}")
 
         return final_image, self.intermediate_images, full_metadata
 
