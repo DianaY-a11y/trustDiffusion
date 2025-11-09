@@ -307,10 +307,6 @@ These aren't bugs — they're **windows into the model's interpretive process**.
 
 ## 📚 References & Further Reading
 
-### Diffusion Models
-- **Denoising Diffusion Probabilistic Models** (Ho et al., 2020)
-- **Stable Diffusion** (Rombach et al., 2022)
-
 ### Image Theory
 - Walter Benjamin, *The Work of Art in the Age of Mechanical Reproduction* (1935)
 - Vilém Flusser, *Towards a Philosophy of Photography* (1983)
