@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffusion Process Visualizer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="canvas-container"></div>
+
+        <div id="controls">
+            <div class="control-group">
+                <label for="sequence-select">Sequence:</label>
+                <select id="sequence-select">
+                    <optgroup label="Original Sequences">
+                        <option value="01_standard">Standard Generation</option>
+                        <option value="02_low_steps">Low Steps (Arrested Development)</option>
+                        <option value="03_high_guidance">High Guidance (Over-interpretation)</option>
+                        <option value="04_paradox">Paradoxical Prompt</option>
+                    </optgroup>
+                    <optgroup label="Fake News Theme">
+                        <option value="05_truth_vs_lies">Truth vs Lies</option>
+                        <option value="06_echo_chamber">Echo Chamber</option>
+                        <option value="07_propaganda">Propaganda Machine</option>
+                        <option value="08_deepfake_paradox">Deepfake Paradox</option>
+                        <option value="09_info_overload">Information Overload</option>
+                        <option value="10_viral_spread">Viral Spread</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="step-slider">Step: <span id="step-display">0</span></label>
+                <input type="range" id="step-slider" min="0" max="50" value="0" step="1">
+            </div>
+
+            <div class="control-group">
+                <button id="play-button">Play</button>
+                <button id="reset-button">Reset</button>
+            </div>
+
+            <div class="control-group">
+                <label for="speed-slider">Playback Speed: <span id="speed-display">1.0</span>x</label>
+                <input type="range" id="speed-slider" min="0.1" max="3.0" value="1.0" step="0.1">
+            </div>
+
+            <div class="control-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="show-metadata" checked>
+                    Show Metadata
+                </label>
+                <label>
+                    <input type="checkbox" id="show-diff">
+                    Show Difference Map
+                </label>
+            </div>
+
+            <div class="control-group" id="diff-intensity-controls" style="display: none;">
+                <label for="diff-intensity">Diff Intensity: <span id="diff-intensity-display">2.0</span>x</label>
+                <input type="range" id="diff-intensity" min="0.5" max="4.0" value="2.0" step="0.1">
+            </div>
+
+            <div class="control-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="show-prompt">
+                    Show Prompt
+                </label>
+                <label>
+                    <input type="checkbox" id="comparison-mode">
+                    Comparison Mode
+                </label>
+                <label>
+                    <input type="checkbox" id="show-intensity-graph">
+                    Intensity Graph
+                </label>
+            </div>
+
+            <div class="control-group" id="comparison-controls" style="display: none;">
+                <label for="compare-sequence-select">Compare with:</label>
+                <select id="compare-sequence-select">
+                    <optgroup label="Original Sequences">
+                        <option value="01_standard">Standard Generation</option>
+                        <option value="02_low_steps">Low Steps (Arrested Development)</option>
+                        <option value="03_high_guidance">High Guidance (Over-interpretation)</option>
+                        <option value="04_paradox">Paradoxical Prompt</option>
+                    </optgroup>
+                    <optgroup label="Fake News Theme">
+                        <option value="05_truth_vs_lies">Truth vs Lies</option>
+                        <option value="06_echo_chamber">Echo Chamber</option>
+                        <option value="07_propaganda">Propaganda Machine</option>
+                        <option value="08_deepfake_paradox">Deepfake Paradox</option>
+                        <option value="09_info_overload">Information Overload</option>
+                        <option value="10_viral_spread">Viral Spread</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+        <div id="metadata-panel">
+            <h3>Process Metadata</h3>
+            <div id="metadata-content">
+                <p><strong>Prompt:</strong> <span id="meta-prompt">-</span></p>
+                <p><strong>Step:</strong> <span id="meta-step">-</span> / <span id="meta-total">-</span></p>
+                <p><strong>Timestep:</strong> <span id="meta-timestep">-</span></p>
+                <p><strong>Noise Variance:</strong> <span id="meta-noise">-</span></p>
+                <p><strong>Guidance Scale:</strong> <span id="meta-guidance">-</span></p>
+                <p><strong>Seed:</strong> <span id="meta-seed">-</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>
