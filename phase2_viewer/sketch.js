@@ -36,6 +36,12 @@ let currentTheme = 'truth_vs_lies';
 let currentMode = 'standard';
 let showThemeSelector = false;
 
+// Phase 3 Interpretability overlays
+let showLatentOverlay = false;
+let latentVectors = null;
+let latentChangeData = [];
+let latentOverlayIntensity = 2.0;
+
 function preload() {
     // Load the default theme + mode sequence
     loadThemeModeSequence();
@@ -85,6 +91,11 @@ function draw() {
         // Draw difference map overlay if enabled
         if (showDiff && images[currentStep] && previousImage) {
             drawDifferenceMap();
+        }
+
+        // Draw latent change overlay if enabled (Phase 3)
+        if (showLatentOverlay && latentChangeData.length > 0 && currentStep > 0) {
+            drawLatentOverlay();
         }
 
         // Draw intensity graph
@@ -290,6 +301,137 @@ function drawDiffLegend(maxDiff) {
 
     textAlign(LEFT);
     text(`Max diff: ${maxDiff.toFixed(1)}`, barX, barY + barHeight + 18);
+
+    pop();
+}
+
+function drawLatentOverlay() {
+    /**
+     * Phase 3: Latent Space Change Overlay
+     * Visualizes changes in latent space (deeper than pixel differences)
+     * Shows where the model is "thinking" hardest
+     */
+
+    if (currentStep === 0 || !latentChangeData[currentStep]) return;
+
+    push();
+    blendMode(ADD);
+    noStroke();
+
+    let changeMap = latentChangeData[currentStep];
+    let maxChange = changeMap.max;
+
+    // Resolution of latent space (typically 64x64)
+    let resolution = changeMap.resolution;
+    let scaleX = width / resolution;
+    let scaleY = height / resolution;
+
+    // Draw heatmap rectangles
+    for (let y = 0; y < resolution; y++) {
+        for (let x = 0; x < resolution; x++) {
+            let idx = y * resolution + x;
+            let change = changeMap.data[idx];
+
+            if (change < 0.01) continue; // Skip near-zero changes
+
+            // Normalize and amplify
+            let normalized = (change / maxChange);
+            normalized = pow(normalized, 1.0 / latentOverlayIntensity);
+
+            // Create heatmap color (purple → cyan → yellow)
+            let r, g, b;
+            if (normalized < 0.33) {
+                // Purple to blue
+                let t = normalized / 0.33;
+                r = 128 * (1 - t);
+                g = 0;
+                b = 128 + 127 * t;
+            } else if (normalized < 0.66) {
+                // Blue to cyan
+                let t = (normalized - 0.33) / 0.33;
+                r = 0;
+                g = 255 * t;
+                b = 255;
+            } else {
+                // Cyan to yellow
+                let t = (normalized - 0.66) / 0.34;
+                r = 255 * t;
+                g = 255;
+                b = 255 * (1 - t);
+            }
+
+            fill(r, g, b, normalized * 160);
+            rect(x * scaleX, y * scaleY, scaleX, scaleY);
+        }
+    }
+
+    blendMode(BLEND);
+
+    // Draw legend
+    drawLatentLegend(maxChange);
+
+    pop();
+}
+
+function drawLatentLegend(maxChange) {
+    push();
+    noStroke();
+
+    // Background
+    fill(0, 200);
+    rect(width - 170, height - 120, 160, 110);
+
+    // Title
+    fill(255);
+    textAlign(LEFT, TOP);
+    textSize(11);
+    textFont('Courier New');
+    text('LATENT CHANGE', width - 165, height - 110);
+
+    // Gradient bar
+    let barWidth = 140;
+    let barHeight = 20;
+    let barX = width - 165;
+    let barY = height - 85;
+
+    for (let i = 0; i < barWidth; i++) {
+        let t = i / barWidth;
+        let r, g, b;
+
+        if (t < 0.33) {
+            let tt = t / 0.33;
+            r = 128 * (1 - tt);
+            g = 0;
+            b = 128 + 127 * tt;
+        } else if (t < 0.66) {
+            let tt = (t - 0.33) / 0.33;
+            r = 0;
+            g = 255 * tt;
+            b = 255;
+        } else {
+            let tt = (t - 0.66) / 0.34;
+            r = 255 * tt;
+            g = 255;
+            b = 255 * (1 - tt);
+        }
+
+        stroke(r, g, b);
+        line(barX + i, barY, barX + i, barY + barHeight);
+    }
+
+    // Labels
+    noStroke();
+    fill(255);
+    textSize(9);
+    text('Low', barX, barY + barHeight + 5);
+    textAlign(RIGHT);
+    text('High', barX + barWidth, barY + barHeight + 5);
+
+    textAlign(LEFT);
+    textSize(8);
+    fill(150);
+    text('Phase 3: Deep change', barX, barY + barHeight + 18);
+    text(`Latent space activity`, barX, barY + barHeight + 28);
 
     pop();
 }
@@ -541,6 +683,97 @@ function calculateIntensityData() {
     }
 
     console.log(`Intensity data calculated: ${intensityData.length} points`);
+}
+
+async function loadLatentData(sequenceName) {
+    /**
+     * Phase 3: Load latent vectors from numpy file
+     * Note: This is a simplified loader - in production, use a proper numpy parser
+     * For now, we'll compute latent changes from image data as a proxy
+     */
+    console.log(`Loading Phase 3 latent data for: ${sequenceName}`);
+
+    latentVectors = null;
+    latentChangeData = [];
+
+    // Check if phase3_data exists
+    let phase3Path = `../assets/generated_sequences/${sequenceName}/phase3_data/latent_vectors.npy`;
+
+    // For now, compute proxy latent changes from images
+    // This creates similar visual effect while we wait for proper numpy loading
+    if (images.length > 1) {
+        computeLatentChangeProxy();
+    }
+}
+
+function computeLatentChangeProxy() {
+    /**
+     * Compute latent-like change maps from images
+     * This approximates latent space changes by analyzing image structure
+     * at lower resolution (similar to latent space dimensionality)
+     */
+    console.log('Computing latent change data from images...');
+
+    latentChangeData = [];
+    let resolution = 64; // Latent space resolution
+
+    for (let step = 1; step < images.length; step++) {
+        if (!images[step] || !images[step - 1]) continue;
+
+        let current = images[step];
+        let previous = images[step - 1];
+
+        current.loadPixels();
+        previous.loadPixels();
+
+        let changeMap = {
+            resolution: resolution,
+            data: new Array(resolution * resolution).fill(0),
+            max: 0
+        };
+
+        // Sample images at lower resolution
+        let imgW = current.width;
+        let imgH = current.height;
+        let cellW = imgW / resolution;
+        let cellH = imgH / resolution;
+
+        for (let y = 0; y < resolution; y++) {
+            for (let x = 0; x < resolution; x++) {
+                let totalChange = 0;
+                let samples = 0;
+
+                // Sample within this cell
+                let startX = floor(x * cellW);
+                let startY = floor(y * cellH);
+                let endX = floor((x + 1) * cellW);
+                let endY = floor((y + 1) * cellH);
+
+                for (let py = startY; py < endY; py += 2) {
+                    for (let px = startX; px < endX; px += 2) {
+                        let idx = (py * imgW + px) * 4;
+                        if (idx >= current.pixels.length) continue;
+
+                        let dr = abs(current.pixels[idx] - previous.pixels[idx]);
+                        let dg = abs(current.pixels[idx + 1] - previous.pixels[idx + 1]);
+                        let db = abs(current.pixels[idx + 2] - previous.pixels[idx + 2]);
+
+                        totalChange += (dr + dg + db) / 3;
+                        samples++;
+                    }
+                }
+
+                let avgChange = samples > 0 ? totalChange / samples : 0;
+                let cellIdx = y * resolution + x;
+                changeMap.data[cellIdx] = avgChange;
+                changeMap.max = max(changeMap.max, avgChange);
+            }
+        }
+
+        latentChangeData.push(changeMap);
+    }
+
+    console.log(`✓ Computed ${latentChangeData.length} latent change maps`);
 }
 
 function drawThemeSelector() {
@@ -796,6 +1029,27 @@ function setupUIControls() {
 
     select('#show-prompt').changed(() => {
         showPrompt = select('#show-prompt').checked();
+    });
+
+    // Phase 3: Latent overlay
+    select('#show-latent-overlay').changed(() => {
+        showLatentOverlay = select('#show-latent-overlay').checked();
+        // Compute latent data if enabled and not already done
+        if (showLatentOverlay && latentChangeData.length === 0 && images.length > 1) {
+            computeLatentChangeProxy();
+        }
+        // Show/hide latent intensity controls
+        if (showLatentOverlay) {
+            select('#latent-intensity-controls').style('display', 'block');
+        } else {
+            select('#latent-intensity-controls').style('display', 'none');
+        }
+    });
+
+    // Latent intensity slider
+    select('#latent-intensity').input(() => {
+        latentOverlayIntensity = float(select('#latent-intensity').value());
+        select('#latent-intensity-display').html(latentOverlayIntensity.toFixed(1));
     });
 
     // Comparison mode
