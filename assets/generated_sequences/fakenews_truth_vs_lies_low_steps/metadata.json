@@ -1,0 +1,102 @@
+{
+  "prompt": "newspaper headlines morphing into smoke, truth and lies intertwined, digital glitch aesthetic",
+  "negative_prompt": "",
+  "num_inference_steps": 15,
+  "guidance_scale": 7.5,
+  "seed": 123,
+  "height": 512,
+  "width": 512,
+  "generated_at": "2025-11-08T19:58:07.480400",
+  "steps": [
+    {
+      "step": 1,
+      "timestep": 859,
+      "noise_variance": 0.9998636245727539,
+      "timestamp": "2025-11-08T19:57:39.571233"
+    },
+    {
+      "step": 2,
+      "timestep": 859,
+      "noise_variance": 0.9956293106079102,
+      "timestamp": "2025-11-08T19:57:41.337682"
+    },
+    {
+      "step": 3,
+      "timestep": 793,
+      "noise_variance": 0.987628161907196,
+      "timestamp": "2025-11-08T19:57:43.023387"
+    },
+    {
+      "step": 4,
+      "timestep": 727,
+      "noise_variance": 0.9824627637863159,
+      "timestamp": "2025-11-08T19:57:44.760348"
+    },
+    {
+      "step": 5,
+      "timestep": 661,
+      "noise_variance": 0.9601343274116516,
+      "timestamp": "2025-11-08T19:57:46.515169"
+    },
+    {
+      "step": 6,
+      "timestep": 595,
+      "noise_variance": 0.9552096724510193,
+      "timestamp": "2025-11-08T19:57:48.321670"
+    },
+    {
+      "step": 7,
+      "timestep": 529,
+      "noise_variance": 0.9296606779098511,
+      "timestamp": "2025-11-08T19:57:50.286031"
+    },
+    {
+      "step": 8,
+      "timestep": 463,
+      "noise_variance": 0.9072628021240234,
+      "timestamp": "2025-11-08T19:57:52.165622"
+    },
+    {
+      "step": 9,
+      "timestep": 397,
+      "noise_variance": 0.8822683095932007,
+      "timestamp": "2025-11-08T19:57:54.030078"
+    },
+    {
+      "step": 10,
+      "timestep": 331,
+      "noise_variance": 0.8531861305236816,
+      "timestamp": "2025-11-08T19:57:55.924324"
+    },
+    {
+      "step": 11,
+      "timestep": 265,
+      "noise_variance": 0.8282259702682495,
+      "timestamp": "2025-11-08T19:57:57.821427"
+    },
+    {
+      "step": 12,
+      "timestep": 199,
+      "noise_variance": 0.8009235262870789,
+      "timestamp": "2025-11-08T19:57:59.610116"
+    },
+    {
+      "step": 13,
+      "timestep": 133,
+      "noise_variance": 0.7796112895011902,
+      "timestamp": "2025-11-08T19:58:01.512074"
+    },
+    {
+      "step": 14,
+      "timestep": 67,
+      "noise_variance": 0.7576631903648376,
+      "timestamp": "2025-11-08T19:58:03.437613"
+    },
+    {
+      "step": 15,
+      "timestep": 1,
+      "noise_variance": 0.7581650018692017,
+      "timestamp": "2025-11-08T19:58:06.399098"
+    }
+  ]
+}
