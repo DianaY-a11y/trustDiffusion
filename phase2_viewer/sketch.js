@@ -117,34 +117,7 @@ function draw() {
 }
 
 function drawPlaceholder() {
-    push();
-    fill(40);
-    noStroke();
-    rectMode(CENTER);
-    rect(width / 2, height / 2, width * 0.8, height * 0.8);
-
-    fill(100);
-    textAlign(CENTER, CENTER);
-    textSize(16);
-
-    // Check if we're loading
-    let loadedCount = images.filter(img => img !== undefined).length;
-    if (metadata && metadata.steps && loadedCount < metadata.steps.length) {
-        text(`Loading images... ${loadedCount}/${metadata.steps.length}`, width / 2, height / 2 - 10);
-        // Draw loading bar
-        let progress = loadedCount / metadata.steps.length;
-        stroke(0, 255, 136);
-        strokeWeight(2);
-        noFill();
-        rect(width / 2, height / 2 + 30, 300, 20);
-        noStroke();
-        fill(0, 255, 136);
-        rect(width / 2 - 150, height / 2 + 20, 300 * progress, 20);
-    } else {
-        text('No images loaded', width / 2, height / 2 - 20);
-        text('Generate sequences using Phase 1 script', width / 2, height / 2 + 20);
-    }
-    pop();
+    // Placeholder is not shown during loading
 }
 
 function drawDifferenceMap() {
