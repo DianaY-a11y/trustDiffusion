@@ -697,7 +697,7 @@ async function loadLatentData(sequenceName) {
     latentChangeData = [];
 
     // Check if phase3_data exists
-    let phase3Path = `../assets/generated_sequences/${sequenceName}/phase3_data/latent_vectors.npy`;
+    let phase3Path = `/assets/generated_sequences/${sequenceName}/phase3_data/latent_vectors.npy`;
 
     // For now, compute proxy latent changes from images
     // This creates similar visual effect while we wait for proper numpy loading
@@ -946,7 +946,7 @@ function loadThemeModeSequence() {
     intensityData = [];
 
     // Check if this combination exists, otherwise fall back to old naming
-    let metadataPath = `../assets/generated_sequences/${sequenceName}/metadata.json`;
+    let metadataPath = `/assets/generated_sequences/${sequenceName}/metadata.json`;
 
     fetch(metadataPath)
         .then(response => {
@@ -1107,7 +1107,7 @@ function loadSequenceMetadata(sequenceName) {
     console.log(`Loading sequence: ${sequenceName}`);
 
     // Load actual metadata from JSON file
-    let metadataPath = `../assets/generated_sequences/${sequenceName}/metadata.json`;
+    let metadataPath = `/assets/generated_sequences/${sequenceName}/metadata.json`;
 
     fetch(metadataPath)
         .then(response => {
@@ -1160,7 +1160,7 @@ function loadSequenceImages(sequenceName) {
     let loadedCount = 0;
 
     for (let i = 0; i < numSteps; i++) {
-        let imagePath = `../assets/generated_sequences/${sequenceName}/step_${nf(i, 4)}.png`;
+        let imagePath = `/assets/generated_sequences/${sequenceName}/step_${nf(i, 4)}.png`;
 
         loadImage(
             imagePath,
@@ -1190,7 +1190,7 @@ function loadComparisonSequence(sequenceName) {
     console.log(`Loading comparison sequence: ${sequenceName}`);
 
     // Load metadata for comparison sequence
-    let metadataPath = `../assets/generated_sequences/${sequenceName}/metadata.json`;
+    let metadataPath = `/assets/generated_sequences/${sequenceName}/metadata.json`;
 
     fetch(metadataPath)
         .then(response => {
@@ -1224,7 +1224,7 @@ function loadComparisonImages(sequenceName) {
     let loadedCount = 0;
 
     for (let i = 0; i < numSteps; i++) {
-        let imagePath = `../assets/generated_sequences/${sequenceName}/step_${nf(i, 4)}.png`;
+        let imagePath = `/assets/generated_sequences/${sequenceName}/step_${nf(i, 4)}.png`;
 
         loadImage(
             imagePath,
