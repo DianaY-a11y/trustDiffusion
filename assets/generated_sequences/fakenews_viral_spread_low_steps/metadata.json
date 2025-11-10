@@ -1,0 +1,102 @@
+{
+  "prompt": "misinformation spreading like a virus through networks, glowing pathways, infection map, exponential growth",
+  "negative_prompt": "",
+  "num_inference_steps": 15,
+  "guidance_scale": 7.5,
+  "seed": 161718,
+  "height": 512,
+  "width": 512,
+  "generated_at": "2025-11-08T20:25:29.103249",
+  "steps": [
+    {
+      "step": 1,
+      "timestep": 859,
+      "noise_variance": 1.0065433979034424,
+      "timestamp": "2025-11-08T20:25:02.682188"
+    },
+    {
+      "step": 2,
+      "timestep": 859,
+      "noise_variance": 1.0063481330871582,
+      "timestamp": "2025-11-08T20:25:04.234671"
+    },
+    {
+      "step": 3,
+      "timestep": 793,
+      "noise_variance": 1.0054723024368286,
+      "timestamp": "2025-11-08T20:25:05.719925"
+    },
+    {
+      "step": 4,
+      "timestep": 727,
+      "noise_variance": 0.9997602105140686,
+      "timestamp": "2025-11-08T20:25:07.280443"
+    },
+    {
+      "step": 5,
+      "timestep": 661,
+      "noise_variance": 1.002488136291504,
+      "timestamp": "2025-11-08T20:25:08.832757"
+    },
+    {
+      "step": 6,
+      "timestep": 595,
+      "noise_variance": 0.9943568110466003,
+      "timestamp": "2025-11-08T20:25:10.388814"
+    },
+    {
+      "step": 7,
+      "timestep": 529,
+      "noise_variance": 0.9857784509658813,
+      "timestamp": "2025-11-08T20:25:12.028961"
+    },
+    {
+      "step": 8,
+      "timestep": 463,
+      "noise_variance": 0.9772956967353821,
+      "timestamp": "2025-11-08T20:25:13.500662"
+    },
+    {
+      "step": 9,
+      "timestep": 397,
+      "noise_variance": 0.9668055772781372,
+      "timestamp": "2025-11-08T20:25:14.999997"
+    },
+    {
+      "step": 10,
+      "timestep": 331,
+      "noise_variance": 0.9566391706466675,
+      "timestamp": "2025-11-08T20:25:16.515714"
+    },
+    {
+      "step": 11,
+      "timestep": 265,
+      "noise_variance": 0.94659423828125,
+      "timestamp": "2025-11-08T20:25:18.044910"
+    },
+    {
+      "step": 12,
+      "timestep": 199,
+      "noise_variance": 0.9361233115196228,
+      "timestamp": "2025-11-08T20:25:19.581816"
+    },
+    {
+      "step": 13,
+      "timestep": 133,
+      "noise_variance": 0.9269243478775024,
+      "timestamp": "2025-11-08T20:25:21.112387"
+    },
+    {
+      "step": 14,
+      "timestep": 67,
+      "noise_variance": 0.9145480990409851,
+      "timestamp": "2025-11-08T20:25:22.843095"
+    },
+    {
+      "step": 15,
+      "timestep": 1,
+      "noise_variance": 0.9157558679580688,
+      "timestamp": "2025-11-08T20:25:28.142228"
+    }
+  ]
+}
