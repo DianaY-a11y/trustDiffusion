@@ -1,0 +1,102 @@
+{
+  "prompt": "propaganda posters, megaphones, manipulated crowds, red and black colors, authoritarian aesthetic",
+  "negative_prompt": "",
+  "num_inference_steps": 15,
+  "guidance_scale": 7.5,
+  "seed": 789,
+  "height": 512,
+  "width": 512,
+  "generated_at": "2025-11-08T20:08:49.914467",
+  "steps": [
+    {
+      "step": 1,
+      "timestep": 859,
+      "noise_variance": 1.0004998445510864,
+      "timestamp": "2025-11-08T20:08:25.700159"
+    },
+    {
+      "step": 2,
+      "timestep": 859,
+      "noise_variance": 1.0009280443191528,
+      "timestamp": "2025-11-08T20:08:27.376419"
+    },
+    {
+      "step": 3,
+      "timestep": 793,
+      "noise_variance": 0.9905045032501221,
+      "timestamp": "2025-11-08T20:08:29.026515"
+    },
+    {
+      "step": 4,
+      "timestep": 727,
+      "noise_variance": 1.0084854364395142,
+      "timestamp": "2025-11-08T20:08:30.733767"
+    },
+    {
+      "step": 5,
+      "timestep": 661,
+      "noise_variance": 0.9946940541267395,
+      "timestamp": "2025-11-08T20:08:32.385496"
+    },
+    {
+      "step": 6,
+      "timestep": 595,
+      "noise_variance": 1.0005927085876465,
+      "timestamp": "2025-11-08T20:08:34.026508"
+    },
+    {
+      "step": 7,
+      "timestep": 529,
+      "noise_variance": 0.9887011647224426,
+      "timestamp": "2025-11-08T20:08:35.655939"
+    },
+    {
+      "step": 8,
+      "timestep": 463,
+      "noise_variance": 0.9910373091697693,
+      "timestamp": "2025-11-08T20:08:37.228105"
+    },
+    {
+      "step": 9,
+      "timestep": 397,
+      "noise_variance": 0.978959321975708,
+      "timestamp": "2025-11-08T20:08:38.862052"
+    },
+    {
+      "step": 10,
+      "timestep": 331,
+      "noise_variance": 0.9777980446815491,
+      "timestamp": "2025-11-08T20:08:40.534751"
+    },
+    {
+      "step": 11,
+      "timestep": 265,
+      "noise_variance": 0.9695976972579956,
+      "timestamp": "2025-11-08T20:08:42.168488"
+    },
+    {
+      "step": 12,
+      "timestep": 199,
+      "noise_variance": 0.9673041701316833,
+      "timestamp": "2025-11-08T20:08:43.788402"
+    },
+    {
+      "step": 13,
+      "timestep": 133,
+      "noise_variance": 0.9605459570884705,
+      "timestamp": "2025-11-08T20:08:45.498640"
+    },
+    {
+      "step": 14,
+      "timestep": 67,
+      "noise_variance": 0.9549773335456848,
+      "timestamp": "2025-11-08T20:08:47.143236"
+    },
+    {
+      "step": 15,
+      "timestep": 1,
+      "noise_variance": 0.9556942582130432,
+      "timestamp": "2025-11-08T20:08:48.876837"
+    }
+  ]
+}

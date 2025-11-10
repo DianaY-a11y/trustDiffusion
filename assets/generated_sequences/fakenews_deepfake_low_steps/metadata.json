@@ -1,0 +1,102 @@
+{
+  "prompt": "real photograph that is completely fake, authentic deception, genuine artificiality",
+  "negative_prompt": "",
+  "num_inference_steps": 15,
+  "guidance_scale": 7.5,
+  "seed": 101112,
+  "height": 512,
+  "width": 512,
+  "generated_at": "2025-11-08T20:14:48.353635",
+  "steps": [
+    {
+      "step": 1,
+      "timestep": 859,
+      "noise_variance": 1.0008394718170166,
+      "timestamp": "2025-11-08T20:14:18.549268"
+    },
+    {
+      "step": 2,
+      "timestep": 859,
+      "noise_variance": 0.9975773692131042,
+      "timestamp": "2025-11-08T20:14:20.380359"
+    },
+    {
+      "step": 3,
+      "timestep": 793,
+      "noise_variance": 0.9924271702766418,
+      "timestamp": "2025-11-08T20:14:22.119956"
+    },
+    {
+      "step": 4,
+      "timestep": 727,
+      "noise_variance": 0.9813486337661743,
+      "timestamp": "2025-11-08T20:14:25.058040"
+    },
+    {
+      "step": 5,
+      "timestep": 661,
+      "noise_variance": 0.9733898639678955,
+      "timestamp": "2025-11-08T20:14:28.716172"
+    },
+    {
+      "step": 6,
+      "timestep": 595,
+      "noise_variance": 0.9538113474845886,
+      "timestamp": "2025-11-08T20:14:30.571819"
+    },
+    {
+      "step": 7,
+      "timestep": 529,
+      "noise_variance": 0.94069904088974,
+      "timestamp": "2025-11-08T20:14:32.314940"
+    },
+    {
+      "step": 8,
+      "timestep": 463,
+      "noise_variance": 0.9139441251754761,
+      "timestamp": "2025-11-08T20:14:34.202124"
+    },
+    {
+      "step": 9,
+      "timestep": 397,
+      "noise_variance": 0.8926419019699097,
+      "timestamp": "2025-11-08T20:14:36.216308"
+    },
+    {
+      "step": 10,
+      "timestep": 331,
+      "noise_variance": 0.8665820360183716,
+      "timestamp": "2025-11-08T20:14:38.203026"
+    },
+    {
+      "step": 11,
+      "timestep": 265,
+      "noise_variance": 0.8418750166893005,
+      "timestamp": "2025-11-08T20:14:40.175352"
+    },
+    {
+      "step": 12,
+      "timestep": 199,
+      "noise_variance": 0.8181728720664978,
+      "timestamp": "2025-11-08T20:14:41.885552"
+    },
+    {
+      "step": 13,
+      "timestep": 133,
+      "noise_variance": 0.7992444038391113,
+      "timestamp": "2025-11-08T20:14:43.620088"
+    },
+    {
+      "step": 14,
+      "timestep": 67,
+      "noise_variance": 0.7786200046539307,
+      "timestamp": "2025-11-08T20:14:45.451650"
+    },
+    {
+      "step": 15,
+      "timestep": 1,
+      "noise_variance": 0.7797720432281494,
+      "timestamp": "2025-11-08T20:14:47.270494"
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "prompt": "real photograph that is completely fake, authentic deception, genuine artificiality, simultaneously existing and non-existing, visible invisibility",
+  "negative_prompt": "",
+  "num_inference_steps": 50,
+  "guidance_scale": 7.5,
+  "seed": 101112,
+  "height": 512,
+  "width": 512,
+  "generated_at": "2025-11-08T20:18:09.475134",
+  "steps": [
+    {
+      "step": 1,
+      "timestep": 961,
+      "noise_variance": 1.002366065979004,
+      "timestamp": "2025-11-08T20:16:32.075391"
+    },
+    {
+      "step": 2,
+      "timestep": 961,
+      "noise_variance": 1.0020105838775635,
+      "timestamp": "2025-11-08T20:16:33.755664"
+    },
+    {
+      "step": 3,
+      "timestep": 941,
+      "noise_variance": 1.0015729665756226,
+      "timestamp": "2025-11-08T20:16:35.340697"
+    },
+    {
+      "step": 4,
+      "timestep": 921,
+      "noise_variance": 1.0009983777999878,
+      "timestamp": "2025-11-08T20:16:36.851888"
+    },
+    {
+      "step": 5,
+      "timestep": 901,
+      "noise_variance": 1.000343680381775,
+      "timestamp": "2025-11-08T20:16:38.453227"
+    },
+    {
+      "step": 6,
+      "timestep": 881,
+      "noise_variance": 0.9995617866516113,
+      "timestamp": "2025-11-08T20:16:39.997388"
+    },
+    {
+      "step": 7,
+      "timestep": 861,
+      "noise_variance": 0.998632550239563,
+      "timestamp": "2025-11-08T20:16:41.636124"
+    },
+    {
+      "step": 8,
+      "timestep": 841,
+      "noise_variance": 0.9976480603218079,
+      "timestamp": "2025-11-08T20:16:43.278956"
+    },
+    {
+      "step": 9,
+      "timestep": 821,
+      "noise_variance": 0.9963939785957336,
+      "timestamp": "2025-11-08T20:16:44.943926"
+    },
+    {
+      "step": 10,
+      "timestep": 801,
+      "noise_variance": 0.9951196908950806,
+      "timestamp": "2025-11-08T20:16:46.660289"
+    },
+    {
+      "step": 11,
+      "timestep": 781,
+      "noise_variance": 0.9934349060058594,
+      "timestamp": "2025-11-08T20:16:56.379286"
+    },
+    {
+      "step": 12,
+      "timestep": 761,
+      "noise_variance": 0.9930998682975769,
+      "timestamp": "2025-11-08T20:17:00.087932"
+    },
+    {
+      "step": 13,
+      "timestep": 741,
+      "noise_variance": 0.9894548058509827,
+      "timestamp": "2025-11-08T20:17:07.299870"
+    },
+    {
+      "step": 14,
+      "timestep": 721,
+      "noise_variance": 0.9894392490386963,
+      "timestamp": "2025-11-08T20:17:10.586852"
+    },
+    {
+      "step": 15,
+      "timestep": 701,
+      "noise_variance": 0.9850703477859497,
+      "timestamp": "2025-11-08T20:17:12.233751"
+    },
+    {
+      "step": 16,
+      "timestep": 681,
+      "noise_variance": 0.9832370281219482,
+      "timestamp": "2025-11-08T20:17:13.835495"
+    },
+    {
+      "step": 17,
+      "timestep": 661,
+      "noise_variance": 0.9796367883682251,
+      "timestamp": "2025-11-08T20:17:15.371866"
+    },
+    {
+      "step": 18,
+      "timestep": 641,
+      "noise_variance": 0.9764031767845154,
+      "timestamp": "2025-11-08T20:17:16.914774"
+    },
+    {
+      "step": 19,
+      "timestep": 621,
+      "noise_variance": 0.9727100133895874,
+      "timestamp": "2025-11-08T20:17:18.448173"
+    },
+    {
+      "step": 20,
+      "timestep": 601,
+      "noise_variance": 0.9689399003982544,
+      "timestamp": "2025-11-08T20:17:19.987925"
+    },
+    {
+      "step": 21,
+      "timestep": 581,
+      "noise_variance": 0.9649312496185303,
+      "timestamp": "2025-11-08T20:17:21.544236"
+    },
+    {
+      "step": 22,
+      "timestep": 561,
+      "noise_variance": 0.9606420993804932,
+      "timestamp": "2025-11-08T20:17:23.071434"
+    },
+    {
+      "step": 23,
+      "timestep": 541,
+      "noise_variance": 0.9559406042098999,
+      "timestamp": "2025-11-08T20:17:24.596759"
+    },
+    {
+      "step": 24,
+      "timestep": 521,
+      "noise_variance": 0.9508702158927917,
+      "timestamp": "2025-11-08T20:17:26.146138"
+    },
+    {
+      "step": 25,
+      "timestep": 501,
+      "noise_variance": 0.9454124569892883,
+      "timestamp": "2025-11-08T20:17:27.685607"
+    },
+    {
+      "step": 26,
+      "timestep": 481,
+      "noise_variance": 0.9395197033882141,
+      "timestamp": "2025-11-08T20:17:29.237484"
+    },
+    {
+      "step": 27,
+      "timestep": 461,
+      "noise_variance": 0.9333416223526001,
+      "timestamp": "2025-11-08T20:17:30.864243"
+    },
+    {
+      "step": 28,
+      "timestep": 441,
+      "noise_variance": 0.9268769025802612,
+      "timestamp": "2025-11-08T20:17:32.429144"
+    },
+    {
+      "step": 29,
+      "timestep": 421,
+      "noise_variance": 0.9201759099960327,
+      "timestamp": "2025-11-08T20:17:33.978348"
+    },
+    {
+      "step": 30,
+      "timestep": 401,
+      "noise_variance": 0.9132521152496338,
+      "timestamp": "2025-11-08T20:17:35.550287"
+    },
+    {
+      "step": 31,
+      "timestep": 381,
+      "noise_variance": 0.9061442613601685,
+      "timestamp": "2025-11-08T20:17:37.098561"
+    },
+    {
+      "step": 32,
+      "timestep": 361,
+      "noise_variance": 0.8988921046257019,
+      "timestamp": "2025-11-08T20:17:38.644771"
+    },
+    {
+      "step": 33,
+      "timestep": 341,
+      "noise_variance": 0.8914936780929565,
+      "timestamp": "2025-11-08T20:17:40.179581"
+    },
+    {
+      "step": 34,
+      "timestep": 321,
+      "noise_variance": 0.8840511441230774,
+      "timestamp": "2025-11-08T20:17:41.723265"
+    },
+    {
+      "step": 35,
+      "timestep": 301,
+      "noise_variance": 0.8765818476676941,
+      "timestamp": "2025-11-08T20:17:43.260500"
+    },
+    {
+      "step": 36,
+      "timestep": 281,
+      "noise_variance": 0.8690503239631653,
+      "timestamp": "2025-11-08T20:17:44.984085"
+    },
+    {
+      "step": 37,
+      "timestep": 261,
+      "noise_variance": 0.8616238832473755,
+      "timestamp": "2025-11-08T20:17:46.550059"
+    },
+    {
+      "step": 38,
+      "timestep": 241,
+      "noise_variance": 0.8541876673698425,
+      "timestamp": "2025-11-08T20:17:48.141491"
+    },
+    {
+      "step": 39,
+      "timestep": 221,
+      "noise_variance": 0.8468851447105408,
+      "timestamp": "2025-11-08T20:17:49.687114"
+    },
+    {
+      "step": 40,
+      "timestep": 201,
+      "noise_variance": 0.8397088050842285,
+      "timestamp": "2025-11-08T20:17:51.245259"
+    },
+    {
+      "step": 41,
+      "timestep": 181,
+      "noise_variance": 0.8327475190162659,
+      "timestamp": "2025-11-08T20:17:52.803216"
+    },
+    {
+      "step": 42,
+      "timestep": 161,
+      "noise_variance": 0.8260102868080139,
+      "timestamp": "2025-11-08T20:17:54.325665"
+    },
+    {
+      "step": 43,
+      "timestep": 141,
+      "noise_variance": 0.8195431232452393,
+      "timestamp": "2025-11-08T20:17:55.938060"
+    },
+    {
+      "step": 44,
+      "timestep": 121,
+      "noise_variance": 0.8133273124694824,
+      "timestamp": "2025-11-08T20:17:57.457953"
+    },
+    {
+      "step": 45,
+      "timestep": 101,
+      "noise_variance": 0.8074663281440735,
+      "timestamp": "2025-11-08T20:17:59.001452"
+    },
+    {
+      "step": 46,
+      "timestep": 81,
+      "noise_variance": 0.8019049763679504,
+      "timestamp": "2025-11-08T20:18:00.611370"
+    },
+    {
+      "step": 47,
+      "timestep": 61,
+      "noise_variance": 0.7966213822364807,
+      "timestamp": "2025-11-08T20:18:02.347143"
+    },
+    {
+      "step": 48,
+      "timestep": 41,
+      "noise_variance": 0.7916757464408875,
+      "timestamp": "2025-11-08T20:18:04.221943"
+    },
+    {
+      "step": 49,
+      "timestep": 21,
+      "noise_variance": 0.7855405211448669,
+      "timestamp": "2025-11-08T20:18:06.155233"
+    },
+    {
+      "step": 50,
+      "timestep": 1,
+      "noise_variance": 0.7862517237663269,
+      "timestamp": "2025-11-08T20:18:07.817307"
+    }
+  ]
+}
