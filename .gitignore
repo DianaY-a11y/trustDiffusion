@@ -7,10 +7,8 @@ __pycache__/
 .Python
 *.so
 
-# Generated assets (keep demo sequences for Vercel)
-assets/generated_sequences/*
-!assets/generated_sequences/.gitkeep
-!assets/generated_sequences/fakenews_truth_vs_lies_standard/
+# Generated assets
+# (All sequences included for full Vercel deployment)
 
 # Model cache (HuggingFace)
 .cache/

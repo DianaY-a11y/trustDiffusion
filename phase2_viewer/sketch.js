@@ -813,9 +813,6 @@ function drawThemeSelector() {
     fill(150);
     textSize(9);
     text(`Mode: ${modeName}`, selectorX + 15, selectorY + 50);
-    fill(200, 100, 100);
-    textSize(8);
-    text('Note: Only demo sequence available online', selectorX + 15, selectorY + 65);
 
     // Expand/collapse button
     fill(0, 255, 136, 100);
@@ -950,54 +947,10 @@ function loadThemeModeSequence() {
     currentStep = 0;
     intensityData = [];
 
-    // Check if this combination exists, otherwise fall back
-    let metadataPath = `/assets/generated_sequences/${sequenceName}/metadata.json`;
-
-    fetch(metadataPath)
-        .then(response => {
-            if (!response.ok) {
-                console.warn(`Sequence not found: ${sequenceName}`);
-                // Try old naming format
-                let oldSequenceName = getOldSequenceName(currentTheme);
-                console.log(`Trying old format: ${oldSequenceName}`);
-
-                return fetch(`/assets/generated_sequences/${oldSequenceName}/metadata.json`)
-                    .then(oldResponse => {
-                        if (!oldResponse.ok) {
-                            throw new Error('Both new and old formats failed');
-                        }
-                        return oldSequenceName;
-                    });
-            }
-            return sequenceName;
-        })
-        .then(finalSequenceName => {
-            if (typeof finalSequenceName === 'string') {
-                loadSequenceMetadata(finalSequenceName);
-            }
-        })
-        .catch(error => {
-            console.error('Sequence not available:', error);
-            // Fall back to the demo sequence that we know exists
-            console.log('Falling back to demo sequence: fakenews_truth_vs_lies_standard');
-            alert(`Sequence "${getThemeName(currentTheme)} - ${getModeName(currentMode)}" is not available on this deployment.\n\nOnly "Truth vs Lies - Standard" is included.\n\nLoading demo sequence...`);
-            currentTheme = 'truth_vs_lies';
-            currentMode = 'standard';
-            loadSequenceMetadata('fakenews_truth_vs_lies_standard');
-        });
+    // Load the sequence
+    loadSequenceMetadata(sequenceName);
 }
 
-function getOldSequenceName(themeId) {
-    const oldNames = {
-        'truth_vs_lies': '05_truth_vs_lies',
-        'echo_chamber': '06_echo_chamber',
-        'propaganda': '07_propaganda',
-        'deepfake': '08_deepfake_paradox',
-        'info_overload': '09_info_overload',
-        'viral_spread': '10_viral_spread'
-    };
-    return oldNames[themeId] || '05_truth_vs_lies';
-}
 
 function setupUIControls() {
     // Step slider
