@@ -1,0 +1,106 @@
+{
+  "prompt": "a protest in a city square, dreamlike lighting, chaos and hope",
+  "negative_prompt": "",
+  "num_inference_steps": 15,
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "height": 512,
+  "width": 512,
+  "generated_at": "2025-11-09T08:12:59.535739",
+  "steps": [
+    {
+      "step": 1,
+      "timestep": 859,
+      "noise_variance": 0.9969187378883362,
+      "timestamp": "2025-11-09T08:12:35.266961"
+    },
+    {
+      "step": 2,
+      "timestep": 859,
+      "noise_variance": 0.9945438504219055,
+      "timestamp": "2025-11-09T08:12:36.775652"
+    },
+    {
+      "step": 3,
+      "timestep": 793,
+      "noise_variance": 0.986034095287323,
+      "timestamp": "2025-11-09T08:12:38.291895"
+    },
+    {
+      "step": 4,
+      "timestep": 727,
+      "noise_variance": 0.9820278286933899,
+      "timestamp": "2025-11-09T08:12:39.913299"
+    },
+    {
+      "step": 5,
+      "timestep": 661,
+      "noise_variance": 0.967630922794342,
+      "timestamp": "2025-11-09T08:12:41.967900"
+    },
+    {
+      "step": 6,
+      "timestep": 595,
+      "noise_variance": 0.9536822438240051,
+      "timestamp": "2025-11-09T08:12:43.652297"
+    },
+    {
+      "step": 7,
+      "timestep": 529,
+      "noise_variance": 0.9321801066398621,
+      "timestamp": "2025-11-09T08:12:45.336227"
+    },
+    {
+      "step": 8,
+      "timestep": 463,
+      "noise_variance": 0.9146550297737122,
+      "timestamp": "2025-11-09T08:12:46.975056"
+    },
+    {
+      "step": 9,
+      "timestep": 397,
+      "noise_variance": 0.8901450634002686,
+      "timestamp": "2025-11-09T08:12:48.603938"
+    },
+    {
+      "step": 10,
+      "timestep": 331,
+      "noise_variance": 0.8666865229606628,
+      "timestamp": "2025-11-09T08:12:50.231026"
+    },
+    {
+      "step": 11,
+      "timestep": 265,
+      "noise_variance": 0.8431525826454163,
+      "timestamp": "2025-11-09T08:12:51.873621"
+    },
+    {
+      "step": 12,
+      "timestep": 199,
+      "noise_variance": 0.8214185237884521,
+      "timestamp": "2025-11-09T08:12:53.549022"
+    },
+    {
+      "step": 13,
+      "timestep": 133,
+      "noise_variance": 0.8010744452476501,
+      "timestamp": "2025-11-09T08:12:55.216470"
+    },
+    {
+      "step": 14,
+      "timestep": 67,
+      "noise_variance": 0.7840601801872253,
+      "timestamp": "2025-11-09T08:12:56.914618"
+    },
+    {
+      "step": 15,
+      "timestep": 1,
+      "noise_variance": 0.7848656177520752,
+      "timestamp": "2025-11-09T08:12:58.532934"
+    }
+  ],
+  "phase3_data_available": {
+    "latent_vectors": true,
+    "attention_maps": false
+  }
+}

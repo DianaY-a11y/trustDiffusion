@@ -1,0 +1,316 @@
+{
+  "prompt": "transparent concrete building, frozen fire, liquid architecture",
+  "negative_prompt": "",
+  "num_inference_steps": 50,
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "height": 512,
+  "width": 512,
+  "generated_at": "2025-11-09T08:17:54.779474",
+  "steps": [
+    {
+      "step": 1,
+      "timestep": 961,
+      "noise_variance": 0.9980301260948181,
+      "timestamp": "2025-11-09T08:14:25.565623"
+    },
+    {
+      "step": 2,
+      "timestep": 961,
+      "noise_variance": 0.9974027276039124,
+      "timestamp": "2025-11-09T08:14:27.190166"
+    },
+    {
+      "step": 3,
+      "timestep": 941,
+      "noise_variance": 0.9966974258422852,
+      "timestamp": "2025-11-09T08:14:28.815190"
+    },
+    {
+      "step": 4,
+      "timestep": 921,
+      "noise_variance": 0.9958624839782715,
+      "timestamp": "2025-11-09T08:14:30.458420"
+    },
+    {
+      "step": 5,
+      "timestep": 901,
+      "noise_variance": 0.9949289560317993,
+      "timestamp": "2025-11-09T08:14:32.097966"
+    },
+    {
+      "step": 6,
+      "timestep": 881,
+      "noise_variance": 0.9938351511955261,
+      "timestamp": "2025-11-09T08:14:33.756448"
+    },
+    {
+      "step": 7,
+      "timestep": 861,
+      "noise_variance": 0.9925743937492371,
+      "timestamp": "2025-11-09T08:14:35.419198"
+    },
+    {
+      "step": 8,
+      "timestep": 841,
+      "noise_variance": 0.9910549521446228,
+      "timestamp": "2025-11-09T08:14:37.059043"
+    },
+    {
+      "step": 9,
+      "timestep": 821,
+      "noise_variance": 0.9891857504844666,
+      "timestamp": "2025-11-09T08:14:38.671422"
+    },
+    {
+      "step": 10,
+      "timestep": 801,
+      "noise_variance": 0.987153947353363,
+      "timestamp": "2025-11-09T08:14:40.936902"
+    },
+    {
+      "step": 11,
+      "timestep": 781,
+      "noise_variance": 0.9850318431854248,
+      "timestamp": "2025-11-09T08:14:43.974753"
+    },
+    {
+      "step": 12,
+      "timestep": 761,
+      "noise_variance": 0.9828923940658569,
+      "timestamp": "2025-11-09T08:14:45.646313"
+    },
+    {
+      "step": 13,
+      "timestep": 741,
+      "noise_variance": 0.980183482170105,
+      "timestamp": "2025-11-09T08:14:47.179927"
+    },
+    {
+      "step": 14,
+      "timestep": 721,
+      "noise_variance": 0.9776541590690613,
+      "timestamp": "2025-11-09T08:14:48.741266"
+    },
+    {
+      "step": 15,
+      "timestep": 701,
+      "noise_variance": 0.9743338227272034,
+      "timestamp": "2025-11-09T08:14:50.381679"
+    },
+    {
+      "step": 16,
+      "timestep": 681,
+      "noise_variance": 0.9710872173309326,
+      "timestamp": "2025-11-09T08:14:52.011075"
+    },
+    {
+      "step": 17,
+      "timestep": 661,
+      "noise_variance": 0.9671024680137634,
+      "timestamp": "2025-11-09T08:14:53.614553"
+    },
+    {
+      "step": 18,
+      "timestep": 641,
+      "noise_variance": 0.9633446931838989,
+      "timestamp": "2025-11-09T08:14:55.273834"
+    },
+    {
+      "step": 19,
+      "timestep": 621,
+      "noise_variance": 0.9583052396774292,
+      "timestamp": "2025-11-09T08:14:56.929905"
+    },
+    {
+      "step": 20,
+      "timestep": 601,
+      "noise_variance": 0.9531505107879639,
+      "timestamp": "2025-11-09T08:14:58.602856"
+    },
+    {
+      "step": 21,
+      "timestep": 581,
+      "noise_variance": 0.947618842124939,
+      "timestamp": "2025-11-09T08:15:00.259272"
+    },
+    {
+      "step": 22,
+      "timestep": 561,
+      "noise_variance": 0.9412245154380798,
+      "timestamp": "2025-11-09T08:15:01.917210"
+    },
+    {
+      "step": 23,
+      "timestep": 541,
+      "noise_variance": 0.9345679879188538,
+      "timestamp": "2025-11-09T08:15:03.459287"
+    },
+    {
+      "step": 24,
+      "timestep": 521,
+      "noise_variance": 0.9274958968162537,
+      "timestamp": "2025-11-09T08:15:05.020304"
+    },
+    {
+      "step": 25,
+      "timestep": 501,
+      "noise_variance": 0.9199052453041077,
+      "timestamp": "2025-11-09T08:15:06.701301"
+    },
+    {
+      "step": 26,
+      "timestep": 481,
+      "noise_variance": 0.912109911441803,
+      "timestamp": "2025-11-09T08:15:08.341097"
+    },
+    {
+      "step": 27,
+      "timestep": 461,
+      "noise_variance": 0.9038774371147156,
+      "timestamp": "2025-11-09T08:15:09.993051"
+    },
+    {
+      "step": 28,
+      "timestep": 441,
+      "noise_variance": 0.8952857255935669,
+      "timestamp": "2025-11-09T08:15:11.717621"
+    },
+    {
+      "step": 29,
+      "timestep": 421,
+      "noise_variance": 0.8863608241081238,
+      "timestamp": "2025-11-09T08:15:16.605699"
+    },
+    {
+      "step": 30,
+      "timestep": 401,
+      "noise_variance": 0.8770838975906372,
+      "timestamp": "2025-11-09T08:15:18.797505"
+    },
+    {
+      "step": 31,
+      "timestep": 381,
+      "noise_variance": 0.8675538897514343,
+      "timestamp": "2025-11-09T08:15:20.397459"
+    },
+    {
+      "step": 32,
+      "timestep": 361,
+      "noise_variance": 0.8577721118927002,
+      "timestamp": "2025-11-09T08:15:22.007617"
+    },
+    {
+      "step": 33,
+      "timestep": 341,
+      "noise_variance": 0.8477884531021118,
+      "timestamp": "2025-11-09T08:15:23.872542"
+    },
+    {
+      "step": 34,
+      "timestep": 321,
+      "noise_variance": 0.8376341462135315,
+      "timestamp": "2025-11-09T08:15:25.481759"
+    },
+    {
+      "step": 35,
+      "timestep": 301,
+      "noise_variance": 0.8273738026618958,
+      "timestamp": "2025-11-09T08:15:27.134250"
+    },
+    {
+      "step": 36,
+      "timestep": 281,
+      "noise_variance": 0.8170644640922546,
+      "timestamp": "2025-11-09T08:17:21.724152"
+    },
+    {
+      "step": 37,
+      "timestep": 261,
+      "noise_variance": 0.8067355751991272,
+      "timestamp": "2025-11-09T08:17:27.688189"
+    },
+    {
+      "step": 38,
+      "timestep": 241,
+      "noise_variance": 0.796448826789856,
+      "timestamp": "2025-11-09T08:17:29.465129"
+    },
+    {
+      "step": 39,
+      "timestep": 221,
+      "noise_variance": 0.7862272262573242,
+      "timestamp": "2025-11-09T08:17:31.047308"
+    },
+    {
+      "step": 40,
+      "timestep": 201,
+      "noise_variance": 0.7761789560317993,
+      "timestamp": "2025-11-09T08:17:32.712368"
+    },
+    {
+      "step": 41,
+      "timestep": 181,
+      "noise_variance": 0.7662994861602783,
+      "timestamp": "2025-11-09T08:17:35.250426"
+    },
+    {
+      "step": 42,
+      "timestep": 161,
+      "noise_variance": 0.7566682696342468,
+      "timestamp": "2025-11-09T08:17:37.614791"
+    },
+    {
+      "step": 43,
+      "timestep": 141,
+      "noise_variance": 0.7473217844963074,
+      "timestamp": "2025-11-09T08:17:39.442159"
+    },
+    {
+      "step": 44,
+      "timestep": 121,
+      "noise_variance": 0.7382720708847046,
+      "timestamp": "2025-11-09T08:17:41.238963"
+    },
+    {
+      "step": 45,
+      "timestep": 101,
+      "noise_variance": 0.7296250462532043,
+      "timestamp": "2025-11-09T08:17:45.050594"
+    },
+    {
+      "step": 46,
+      "timestep": 81,
+      "noise_variance": 0.7213579416275024,
+      "timestamp": "2025-11-09T08:17:46.829017"
+    },
+    {
+      "step": 47,
+      "timestep": 61,
+      "noise_variance": 0.7134562134742737,
+      "timestamp": "2025-11-09T08:17:48.461260"
+    },
+    {
+      "step": 48,
+      "timestep": 41,
+      "noise_variance": 0.7059745192527771,
+      "timestamp": "2025-11-09T08:17:50.038326"
+    },
+    {
+      "step": 49,
+      "timestep": 21,
+      "noise_variance": 0.6972375512123108,
+      "timestamp": "2025-11-09T08:17:51.580304"
+    },
+    {
+      "step": 50,
+      "timestep": 1,
+      "noise_variance": 0.6978886723518372,
+      "timestamp": "2025-11-09T08:17:53.099781"
+    }
+  ],
+  "phase3_data_available": {
+    "latent_vectors": true,
+    "attention_maps": false
+  }
+}

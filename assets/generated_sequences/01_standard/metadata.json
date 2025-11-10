@@ -1,0 +1,316 @@
+{
+  "prompt": "a protest in a city square, dreamlike lighting, chaos and hope",
+  "negative_prompt": "",
+  "num_inference_steps": 50,
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "height": 512,
+  "width": 512,
+  "generated_at": "2025-11-09T08:12:32.671910",
+  "steps": [
+    {
+      "step": 1,
+      "timestep": 961,
+      "noise_variance": 0.9982032775878906,
+      "timestamp": "2025-11-09T08:11:06.850814"
+    },
+    {
+      "step": 2,
+      "timestep": 961,
+      "noise_variance": 0.9978295564651489,
+      "timestamp": "2025-11-09T08:11:09.801493"
+    },
+    {
+      "step": 3,
+      "timestep": 941,
+      "noise_variance": 0.9975074529647827,
+      "timestamp": "2025-11-09T08:11:11.464860"
+    },
+    {
+      "step": 4,
+      "timestep": 921,
+      "noise_variance": 0.9971717596054077,
+      "timestamp": "2025-11-09T08:11:13.105871"
+    },
+    {
+      "step": 5,
+      "timestep": 901,
+      "noise_variance": 0.9968867897987366,
+      "timestamp": "2025-11-09T08:11:14.731885"
+    },
+    {
+      "step": 6,
+      "timestep": 881,
+      "noise_variance": 0.9964640736579895,
+      "timestamp": "2025-11-09T08:11:16.418039"
+    },
+    {
+      "step": 7,
+      "timestep": 861,
+      "noise_variance": 0.9958238005638123,
+      "timestamp": "2025-11-09T08:11:18.128517"
+    },
+    {
+      "step": 8,
+      "timestep": 841,
+      "noise_variance": 0.9949812889099121,
+      "timestamp": "2025-11-09T08:11:19.759309"
+    },
+    {
+      "step": 9,
+      "timestep": 821,
+      "noise_variance": 0.9938921332359314,
+      "timestamp": "2025-11-09T08:11:21.414809"
+    },
+    {
+      "step": 10,
+      "timestep": 801,
+      "noise_variance": 0.9925632476806641,
+      "timestamp": "2025-11-09T08:11:23.164510"
+    },
+    {
+      "step": 11,
+      "timestep": 781,
+      "noise_variance": 0.9909292459487915,
+      "timestamp": "2025-11-09T08:11:24.798965"
+    },
+    {
+      "step": 12,
+      "timestep": 761,
+      "noise_variance": 0.9890139698982239,
+      "timestamp": "2025-11-09T08:11:26.453890"
+    },
+    {
+      "step": 13,
+      "timestep": 741,
+      "noise_variance": 0.9867691397666931,
+      "timestamp": "2025-11-09T08:11:28.088594"
+    },
+    {
+      "step": 14,
+      "timestep": 721,
+      "noise_variance": 0.9841955304145813,
+      "timestamp": "2025-11-09T08:11:29.722077"
+    },
+    {
+      "step": 15,
+      "timestep": 701,
+      "noise_variance": 0.981345534324646,
+      "timestamp": "2025-11-09T08:11:31.335772"
+    },
+    {
+      "step": 16,
+      "timestep": 681,
+      "noise_variance": 0.9781917333602905,
+      "timestamp": "2025-11-09T08:11:32.893926"
+    },
+    {
+      "step": 17,
+      "timestep": 661,
+      "noise_variance": 0.9747498631477356,
+      "timestamp": "2025-11-09T08:11:34.515693"
+    },
+    {
+      "step": 18,
+      "timestep": 641,
+      "noise_variance": 0.9710272550582886,
+      "timestamp": "2025-11-09T08:11:36.167296"
+    },
+    {
+      "step": 19,
+      "timestep": 621,
+      "noise_variance": 0.9670054912567139,
+      "timestamp": "2025-11-09T08:11:37.720933"
+    },
+    {
+      "step": 20,
+      "timestep": 601,
+      "noise_variance": 0.9627861976623535,
+      "timestamp": "2025-11-09T08:11:39.588834"
+    },
+    {
+      "step": 21,
+      "timestep": 581,
+      "noise_variance": 0.9581146836280823,
+      "timestamp": "2025-11-09T08:11:43.582455"
+    },
+    {
+      "step": 22,
+      "timestep": 561,
+      "noise_variance": 0.9528459310531616,
+      "timestamp": "2025-11-09T08:11:45.276169"
+    },
+    {
+      "step": 23,
+      "timestep": 541,
+      "noise_variance": 0.9474819302558899,
+      "timestamp": "2025-11-09T08:11:46.959563"
+    },
+    {
+      "step": 24,
+      "timestep": 521,
+      "noise_variance": 0.9414611458778381,
+      "timestamp": "2025-11-09T08:11:48.610577"
+    },
+    {
+      "step": 25,
+      "timestep": 501,
+      "noise_variance": 0.9352803230285645,
+      "timestamp": "2025-11-09T08:11:50.242787"
+    },
+    {
+      "step": 26,
+      "timestep": 481,
+      "noise_variance": 0.9286853671073914,
+      "timestamp": "2025-11-09T08:11:51.950013"
+    },
+    {
+      "step": 27,
+      "timestep": 461,
+      "noise_variance": 0.9218841195106506,
+      "timestamp": "2025-11-09T08:11:53.581882"
+    },
+    {
+      "step": 28,
+      "timestep": 441,
+      "noise_variance": 0.9148123264312744,
+      "timestamp": "2025-11-09T08:11:55.186615"
+    },
+    {
+      "step": 29,
+      "timestep": 421,
+      "noise_variance": 0.9073854088783264,
+      "timestamp": "2025-11-09T08:11:56.817782"
+    },
+    {
+      "step": 30,
+      "timestep": 401,
+      "noise_variance": 0.8997852802276611,
+      "timestamp": "2025-11-09T08:11:58.572915"
+    },
+    {
+      "step": 31,
+      "timestep": 381,
+      "noise_variance": 0.8918980956077576,
+      "timestamp": "2025-11-09T08:12:00.221773"
+    },
+    {
+      "step": 32,
+      "timestep": 361,
+      "noise_variance": 0.8838928937911987,
+      "timestamp": "2025-11-09T08:12:01.841098"
+    },
+    {
+      "step": 33,
+      "timestep": 341,
+      "noise_variance": 0.8756338357925415,
+      "timestamp": "2025-11-09T08:12:03.369763"
+    },
+    {
+      "step": 34,
+      "timestep": 321,
+      "noise_variance": 0.8673197031021118,
+      "timestamp": "2025-11-09T08:12:04.902191"
+    },
+    {
+      "step": 35,
+      "timestep": 301,
+      "noise_variance": 0.8588743209838867,
+      "timestamp": "2025-11-09T08:12:06.453600"
+    },
+    {
+      "step": 36,
+      "timestep": 281,
+      "noise_variance": 0.8504056930541992,
+      "timestamp": "2025-11-09T08:12:07.965118"
+    },
+    {
+      "step": 37,
+      "timestep": 261,
+      "noise_variance": 0.8419495820999146,
+      "timestamp": "2025-11-09T08:12:09.643179"
+    },
+    {
+      "step": 38,
+      "timestep": 241,
+      "noise_variance": 0.8335691690444946,
+      "timestamp": "2025-11-09T08:12:11.318761"
+    },
+    {
+      "step": 39,
+      "timestep": 221,
+      "noise_variance": 0.8252747654914856,
+      "timestamp": "2025-11-09T08:12:13.063537"
+    },
+    {
+      "step": 40,
+      "timestep": 201,
+      "noise_variance": 0.8171213269233704,
+      "timestamp": "2025-11-09T08:12:14.719103"
+    },
+    {
+      "step": 41,
+      "timestep": 181,
+      "noise_variance": 0.8091800808906555,
+      "timestamp": "2025-11-09T08:12:16.366015"
+    },
+    {
+      "step": 42,
+      "timestep": 161,
+      "noise_variance": 0.8014996647834778,
+      "timestamp": "2025-11-09T08:12:17.997262"
+    },
+    {
+      "step": 43,
+      "timestep": 141,
+      "noise_variance": 0.7941468358039856,
+      "timestamp": "2025-11-09T08:12:19.657262"
+    },
+    {
+      "step": 44,
+      "timestep": 121,
+      "noise_variance": 0.7870809435844421,
+      "timestamp": "2025-11-09T08:12:21.304365"
+    },
+    {
+      "step": 45,
+      "timestep": 101,
+      "noise_variance": 0.7804029583930969,
+      "timestamp": "2025-11-09T08:12:22.940317"
+    },
+    {
+      "step": 46,
+      "timestep": 81,
+      "noise_variance": 0.7740932703018188,
+      "timestamp": "2025-11-09T08:12:24.513674"
+    },
+    {
+      "step": 47,
+      "timestep": 61,
+      "noise_variance": 0.7680553197860718,
+      "timestamp": "2025-11-09T08:12:26.149899"
+    },
+    {
+      "step": 48,
+      "timestep": 41,
+      "noise_variance": 0.7623725533485413,
+      "timestamp": "2025-11-09T08:12:27.755251"
+    },
+    {
+      "step": 49,
+      "timestep": 21,
+      "noise_variance": 0.7552087903022766,
+      "timestamp": "2025-11-09T08:12:29.282438"
+    },
+    {
+      "step": 50,
+      "timestep": 1,
+      "noise_variance": 0.75590580701828,
+      "timestamp": "2025-11-09T08:12:30.967483"
+    }
+  ],
+  "phase3_data_available": {
+    "latent_vectors": true,
+    "attention_maps": false
+  }
+}
