@@ -7,7 +7,7 @@ let currentSequence = '01_standard';
 let metadata = null;
 let images = [];
 let currentStep = 0;
-let isPlaying = false;
+let isPlaying = true;
 let playbackSpeed = 1.0;
 let lastFrameTime = 0;
 
@@ -64,6 +64,9 @@ function setup() {
 
     // Set up UI event listeners
     setupUIControls();
+
+    // Set initial play button text since we auto-play
+    select('#play-button').html('Pause');
 
     console.log('Visualizer initialized');
     console.log('Canvas size:', size);
